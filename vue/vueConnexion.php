@@ -6,6 +6,20 @@
     <input type="submit" />
 
 </form>
+
+<?php 
+if(isLoggedOn()){
+    ?>
+<p> Youpiii vous etes connecté </p>
+<?php 
+}
+else {?>
+
+<p> pas youpi.. <\p>
+    
+    <?php 
+}?>
+
 <br />
 <a href="./?action=motdepasse">Mot de passe oublié</a>
 

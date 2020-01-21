@@ -2,7 +2,7 @@
 
 function controleurPrincipal($action) {
     $lesActions = array();
-    $lesActions["defaut"] = "connexion.php";
+    $lesActions["defaut"] = "accueil.php";
     $lesActions["connexion"] = "connexion.php";
     $lesActions["motdepasse"] = "motDePasseOubli.php";
 

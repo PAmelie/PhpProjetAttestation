@@ -1,6 +1,5 @@
 <!doctype html>
 
-<?php session_start() ?>
 <html lang="fr">
   <head>
     <!-- Required meta tags -->
