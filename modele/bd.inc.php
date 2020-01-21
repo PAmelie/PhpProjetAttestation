@@ -2,7 +2,7 @@
 
 function connexionPDO() {
     $login = "root";
-    $mdp = "root@sio";
+    $mdp = "";
     $bd = "competence";
     $serveur = "127.0.0.1";
 
