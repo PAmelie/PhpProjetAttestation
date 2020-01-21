@@ -1,6 +1,7 @@
 <?php
 
-include_once "bd.utilisateur.inc.php";
+require_once "bd.utilisateur.inc.php";
+
 
 
 function login($mail, $mdp){
@@ -26,7 +27,9 @@ function login($mail, $mdp){
         // crypt — Hachage à sens unique (indéchiffrable)
         $_SESSION['mail'] = $mail;
         $_SESSION['mdp'] = $mdpBD;
-    }
+            }
+                
+       
 }
 
 function logout() {

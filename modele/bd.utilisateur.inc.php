@@ -23,7 +23,6 @@ function getUtilisateurs() {
 }
 
 function getUtilisateurByMail($login) {
-   $resultat = array(); 
    
    try {
         $cnx = connexionPDO();
@@ -48,8 +47,8 @@ if ($_SERVER["SCRIPT_FILENAME"] == __FILE__) {
     echo "getUtilisateurs() : \n";
     print_r(getUtilisateurs());
 
-    echo "getUtilisateurByMailU('pauladmin1@greta.com') : \n";
-    print_r(getUtilisateurByMailU("pauladmin1@greta.com"));
+    echo "getUtilisateurByMail('pauladmin1@greta.com') : \n";
+    print_r(getUtilisateurByMail("pauladmin1@greta.com"));
 
 }
 ?>
