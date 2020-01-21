@@ -1,8 +1,15 @@
 <?php
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+function controleurPrincipal($action) {
+    $lesActions = array();
+    $lesActions["defaut"] = "connexion.php";
+    $lesActions["connexion"] = "connexion.php";
+    $lesActions["motdepasse"] = "motDePasseOubli.php";
 
+    if (array_key_exists($action, $lesActions)) {
+        return $lesActions[$action];
+    } 
+    else {
+        return $lesActions["defaut"];
+    }
+}
