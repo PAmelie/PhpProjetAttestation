@@ -7,7 +7,7 @@ function getUtilisateurs() {
 
     try {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("select * from Utilisateurs");
+        $req = $cnx->prepare("select * from utilisateurs");
         $req->execute();
 
         $ligne = $req->fetch(PDO::FETCH_ASSOC);
@@ -27,7 +27,7 @@ function getUtilisateurByMail($login) {
    
    try {
         $cnx = connexionPDO();
-        $req = $cnx->prepare("select * from Utilisateurs where mail=:mail");
+        $req = $cnx->prepare("select * from utilisateurs where mail=:mail");
         $req->bindValue(':mail', $login, PDO::PARAM_STR);
         $req->execute();
 
