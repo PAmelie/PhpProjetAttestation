@@ -8,6 +8,7 @@ if ( $_SERVER["SCRIPT_FILENAME"] == __FILE__ ){
 include_once "$racine/modele/authentification.inc.php";
 
 
+
 // recuperation des donnees GET, POST, et SESSION
 if (isset($_POST["mail"]) && isset($_POST["mdp"])){
     $mail=$_POST["mail"];

@@ -1,6 +1,9 @@
 <?php
 
-function connexionPDO() {
+class Connexion {
+    
+
+static function getInstance() {
     $login = "root";
     $mdp = "";
     $bd = "competence";
@@ -15,12 +18,12 @@ function connexionPDO() {
         die();
     }
 }
-
+}
 if ($_SERVER["SCRIPT_FILENAME"] == __FILE__) {
     // prog de test
     header('Content-Type:text/plain');
 
-    echo "connexionPDO() : \n";
-    print_r(connexionPDO());
+    echo "getInstance() : \n";
+    print_r(getInstance());
 }
 ?>
