@@ -27,8 +27,7 @@ function login($mail, $mdp){
         $_SESSION['mail'] = $mail;
         $_SESSION['mdp'] = $mdpBD;
             }
-                
-       
+              
 }
 
 function logout() {
