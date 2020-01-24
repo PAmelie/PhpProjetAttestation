@@ -70,7 +70,7 @@
             $ville = $row["ville"];
             $mail = $row["mail"];
             // rep est une new agence dans la table agence de la bdd competence;
-            $rep = new \competence\agences\Agence($idA, $ville, $mail);
+            $rep = new \modele\metier\Agence($idA, $ville, $mail);
             $rep->setidA($idA);
             return $rep;
         }

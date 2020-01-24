@@ -1,6 +1,5 @@
-
 <?php
-
+namespace modele\metier {
     
     class Agence{
         private $idA;
@@ -41,3 +40,4 @@
       
     }
     
+}
