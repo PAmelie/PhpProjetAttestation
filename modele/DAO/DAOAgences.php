@@ -111,6 +111,8 @@
         }
 
         public function create($objet)
+        //inserer un try catch?
+        //try{
         {
             $sql = "INSERT INTO $this->table (ville, mail) VALUES (:ville, :mail)";
             $stmt = Connexion::getInstance()->prepare($sql);
@@ -121,7 +123,11 @@
             $stmt->execute();
             $objet->setidA(parent::getLastKey());
         }
-
+        //} catch (PDOException $e){
+        //print "Erreur!: " . $e->getMessage() . "<br/>";
+        //die();
+        
+        
         static function getAgences()
         {
             $sql = "SELECT * FROM agences";

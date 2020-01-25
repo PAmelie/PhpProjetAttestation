@@ -4,16 +4,37 @@ require_once "$racine/modele/bd.inc.php";
 require_once "$racine/modele/DAO/DAOAgences.php";
 require_once "$racine/modele/metier/bd.agences.inc.php";
 
+include "$racine/vue/entete.html.php";
+
 echo "tada";
 
 // Affichage des  agences
-echo DAOAgences::getAgences();
+$result = DAOAgences::getAgences();
+//echo DAOAgences::getAgences();
+prer_r($result);
+
+//fonction pour afficher dans un tableau les données
+function prer_r($array){
+    echo'<pre>';
+    print_r($array);
+    echo '</pre>';
+}
 
 
+if(isset($_POST['save'])){
+    $ville = $_POST['ville'];
+    $mail = $_POST['mail'];
+    $agence = new modele\metier\Agence($ville, $mail);
+    $agencenew = new DAOAgences();
+    $agencenew->create($agence);
+    
+    
+}
+    
 //test READ >> aucune erreur donc good? 
-$agence = new DAOAgences();
+//$agence = new DAOAgences();
     //FormateurDAO :: ecriture( ); //appel à une fonction statique
-$agence -> read(4); //appel à une fonction non statique
+//$agence -> read(4); //appel à une fonction non statique
 
 
 // test UPDATE >> non ok
@@ -33,8 +54,8 @@ $lille->update($vannes);*/
  $agencenew -> delete($agence);*/
 
  /// TEST CREATE >> ok
- /* // création de l'objet redon de la classe Agence, avec ses caractéristiques
-    $redon = new modele\metier\Agence("Redon", "redon@greta.com");
+ // création de l'objet redon de la classe Agence, avec ses caractéristiques
+ /*   $redon = new modele\metier\Agence("Redon", "redon@greta.com");
     //création de l'objet redonnew de la classe DAOAgences()
     $redonnew = new DAOAgences();
     //envoi de redon comme objet redonnew dans la BD
@@ -47,3 +68,11 @@ DAOAgences::create($daoAgences);
 $ville = $daoAgences->read('4');
 echo "trouvé : $ville";
 echo "<br/><br/>";*/
+
+
+
+$titre = "Accueil";
+
+    include "$racine/vue/vueMonProfil.php";
+    include "$racine/vue/pied.html.php";
+
