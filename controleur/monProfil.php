@@ -5,8 +5,45 @@ require_once "$racine/modele/DAO/DAOAgences.php";
 require_once "$racine/modele/metier/bd.agences.inc.php";
 
 include "$racine/vue/entete.html.php";
+?>
+<!--<form method="GET" action="">
+    <select name="ville">
+        <option value="Vannes">Vannes</option>
+        <option value="Lorient">Lorient</option>
+        <option value="Pontivy">Pontivy</option>
+    </select>
+    <input type="submit" value="Valider" />
+</form>
+-->
 
-echo "tada";
+
+
+<?php
+$bdd = new PDO("mysql:host=localhost;dbname=competence", "root", "");
+
+
+
+//$req = $bdd->prepare("SELECT * FROM agences WHERE ville = ? ORDER BY idA");
+//$req->execute(array($_GET['ville']));
+
+$req = $bdd->query("SELECT * FROM agences ORDER BY idA");
+?>
+<table border="1">
+<?php
+while($resultat = $req->fetch())
+{
+?>
+<tr>
+    <td><?php echo $resultat['idA'];?></td>
+    <td><?php echo $resultat['ville'];?></td>
+    <td><?php echo $resultat['mail'];?></td>
+</tr>
+<?php
+    
+   // echo $resultat['idA'] . "." . $resultat['ville'] . "." . $resultat['mail'] ."<br />";
+}
+
+
 
 // Affichage des  agences
 $result = DAOAgences::getAgences();
