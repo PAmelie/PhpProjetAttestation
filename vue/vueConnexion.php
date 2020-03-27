@@ -1,4 +1,4 @@
-<h1>Connexion</h1>
+<h1>Connexion TADADA</h1>
 <form action="./?action=connexion" method="POST">
 
     <input type="text" name="mail" placeholder="Email de connexion" /><br />
@@ -23,5 +23,5 @@ else {?>
 <br />
 <a href="./?action=motdepasse">Mot de passe oublié</a>
 
-
+ 
 
