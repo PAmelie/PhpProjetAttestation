@@ -21,7 +21,7 @@ include "$racine/vue/entete.html.php";
 <?php
 $bdd = new PDO("mysql:host=localhost;dbname=competence", "root", "");
 
-
+echo 'blabla';
 
 //$req = $bdd->prepare("SELECT * FROM agences WHERE ville = ? ORDER BY idA");
 //$req->execute(array($_GET['ville']));
