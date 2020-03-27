@@ -1,4 +1,4 @@
-<h1>Connexion TADADA</h1>
+<h1>Connexion TADADAblabla</h1>
 <form action="./?action=connexion" method="POST">
 
     <input type="text" name="mail" placeholder="Email de connexion" /><br />
