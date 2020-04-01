@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     
-   <title><?php echo $titre ?></title>
+   <title><?php echo $titrePage ?></title>
    
     <!-- Bootstrap CSS -->
     <!--<link href="vue/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
