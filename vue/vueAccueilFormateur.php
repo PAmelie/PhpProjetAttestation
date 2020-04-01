@@ -1,7 +1,7 @@
 <?php 
 
 
-require_once "$racine/controleur/evaluer.php"; 
+require_once "./controleur/evaluer.php"; 
 
 if(isset($_GET['edit'])){
     $id = $_GET['edit'];
@@ -23,7 +23,8 @@ if(isset($_GET['edit'])){
      
 <?php
 include_once "./modele/mysql.php";
-$result = readAll("agences");
+$result = readAll("utilisateurs");
+
 ?>
      
 <!-- création du tableau avec une boucle while sur $result:  -->

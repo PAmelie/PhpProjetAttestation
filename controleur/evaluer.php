@@ -7,14 +7,14 @@ include "$racine/vue/entete.html.php";
 
 
 //initialise les variable
-$nom = "";
+/*$nom = "";
 $prenom = "";
 $mail = "";
 $login = "";
 $mdp = "";
 $idAgence = "";
 $statut = "";
-$idU = 0;
+$idU = 0;*/
 
 include_once './modele/mysql.php';
 
