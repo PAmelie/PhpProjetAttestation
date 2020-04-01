@@ -3,6 +3,8 @@
 //mysql.php = connection a la BD et creation des fonctions pour le CRUD
 
 
+
+
 //connection a la BD
 $servername = 'localhost';
 $username = 'root';

@@ -1,6 +1,7 @@
 <?php
 //todo : les require en controleur principal
 
+
 $titrePage = "TestUtilisateur";
 include "$racine/vue/entete.html.php";
 
