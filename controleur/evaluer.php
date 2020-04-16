@@ -3,8 +3,8 @@
 
 
 $titrePage = "TestUtilisateur";
-include "$racine/vue/entete.html.php";
-
+include "./vue/entete.html.php";
+//session_start();
 
 //initialise les variable
 /*$nom = "";
@@ -38,10 +38,36 @@ if (isset($_POST['save'])){
         "idAgence" => $idAgence,
         "statut" =>$statut,
     );
+            
+    insert("utilisateurs", $data); 
+        
+    //$_SESSION['message'] = "Nouvelles données enregistrées";
+    //$_SESSION['msg_type'] = "success";
     
-    insert("utilisateurs", $data);    
+    //header("location: ./vue/vueAccueilFormateur.php");
+    
 }
 
-include "$racine/vue/vueAccueilFormateur.php";
-include "$racine/vue/pied.html.php";
+//delete
+//$id = $_GET['id'];
+
+if (isset($_GET['delete'])){
+    $idBD = "idU";
+    $id = $_GET['delete'];
+    
+    delete("utilisateurs", $idBD, $id);
+        
+    //$_SESSION['message'] = "Données supprimées";
+    //$_SESSION['msg_type'] = "danger";
+    
+    //header("location: ./vue/vueAccueilFormateur.php");
+}
+
+if (isset($_GET['edit'])){
+    $idBD = "idU";
+    $id = $_GET['edit'];
+
+}
+include "./vue/vueAccueilFormateur.php";
+include "./vue/pied.html.php";
 ?>

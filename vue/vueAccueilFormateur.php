@@ -3,7 +3,7 @@
 
 require_once "./controleur/evaluer.php"; 
 
-if(isset($_GET['edit'])){
+/*if(isset($_GET['edit'])){
     $id = $_GET['edit'];
     
     $rec = mysqli_query($db, "SELECT * FROM into WHERE id=$id");
@@ -15,9 +15,18 @@ if(isset($_GET['edit'])){
     $mdp = $record['mdp'];
     $idAgence = $record['idAgence'];
     $statut = $record['statut'];    
-}
-        
+}*/
+
+//if(isset($_SESSION['message'])):
 ?>
+<!--<div class="alert alert-<//?=$SESSION['msg_type']?>">
+    
+    <?php
+        /*echo $_SESSION['message'];
+        unset($_SESSION['message']);*/
+    ?>
+</div>-->
+<?php //endif ?>
 
 <div class="container"
      
@@ -57,15 +66,10 @@ $result = readAll("utilisateurs");
             <td><?php echo $row['statut']; ?></td>
             <td>
                 <!-- TODO : boutton "delete" et "update"  -->
-               <!-- <a href="index.php?action=evaluer&edit=<?php echo $row['id']; ?>">Edit</a>
-            </td>
-            <td>
-                <a href="#">Delete</a>
-            </td>
-               <!--<a href="vueAccueilFormateur.php?edit=<?php echo row['id']; ?>"
-                   class="btn btn-info">Edit</a>
-                <a href="evaluer.php?delete=<?php echo ['id']; ?>"
-                   class="btn btn-danger">Delete</a> -->
+               <a href="index.php?edit=<?php echo $row['idU']; ?>&action=evaluer"
+                  class="btn btn-info">Edit</a>
+               <a href="index.php?delete=<?php echo $row['idU']; ?>&action=evaluer"
+                  class="btn btn-danger">Delete</a>
             </td>
         </tr>
         
@@ -75,11 +79,12 @@ $result = readAll("utilisateurs");
 </div>
 
 <?php
-function pre_r($array){
+
+/*function pre_r($array){
     echo'<pre>';
     print_r($array);
     echo'</pre>';
-}
+}*/
 ?>
 
 <!-- Formulaire nouvel utilisateur -->

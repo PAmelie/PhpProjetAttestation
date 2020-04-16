@@ -39,6 +39,14 @@ function insert($table, $data){
 }
 
 
-function delete($table, $var){
-    
+function delete($table, $idBD, $id){
+    global $db;
+    $query = "DELETE FROM $table WHERE $idBD = $id";
+    echo $query;
+    mysqli_query($db, $query);
+}
+
+function update($table, $idDB, $id){
+    global $db;
+    $query = "SELECT * FROM $table WHERE $idDB = $id";
 }
