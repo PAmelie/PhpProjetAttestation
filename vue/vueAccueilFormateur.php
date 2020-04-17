@@ -19,7 +19,7 @@ require_once "./controleur/evaluer.php";
 
 //if(isset($_SESSION['message'])):
 ?>
-<!--<div class="alert alert-<//?=$SESSION['msg_type']?>">
+<!--<div class="alert alert-<?//=$SESSION['msg_type']?>">
     
     <?php
         /*echo $_SESSION['message'];
@@ -68,8 +68,12 @@ $result = readAll("utilisateurs");
                 <!-- TODO : boutton "delete" et "update"  -->
                <a href="index.php?edit=<?php echo $row['idU']; ?>&action=evaluer"
                   class="btn btn-info">Edit</a>
-               <a href="index.php?delete=<?php echo $row['idU']; ?>&action=evaluer"
-                  class="btn btn-danger">Delete</a>
+               <!--<a href="index.php?delete=<?php echo $row['idU']; ?>&action=evaluer"
+                  class="btn btn-danger">Delete</a>-->
+                <form action="index.php?delete=<?php echo $row['idU']; ?>&action=evaluer" method="POST">
+                    <button name="delete" value="delete">Delete</button>
+                    
+                </form>
             </td>
         </tr>
         
