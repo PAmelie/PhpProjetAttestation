@@ -11,6 +11,8 @@ $username = 'root';
 $password = '';
 $dbname = 'competence';
 
+
+
 $db = new mysqli($servername, $username, $password, $dbname);
 
 
@@ -20,6 +22,13 @@ function readAll($table){
     $result = $db->query("SELECT * From $table") or die($db->error);
     return $result;
 }
+
+function read($table, $id){
+    global $db;
+    $result = $db->query("SELECT $id FROM $table") or die($db->error);
+    return $result;
+}
+
 
 //fonction pour insérer dans une table
 //$data = array avec ses champs et ses valeurs (ex: "nom" => $nom, ...)
