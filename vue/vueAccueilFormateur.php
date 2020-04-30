@@ -68,10 +68,15 @@ $result = readAll("utilisateurs");
                 <!-- TODO : boutton "delete" et "update"  -->
                <a href="index.php?edit=<?php echo $row['idU']; ?>&action=evaluer"
                   class="btn btn-info">Edit</a>
-               <!--<a href="index.php?delete=<?php echo $row['idU']; ?>&action=evaluer"
+               <!--<a href="index.php?delete=<?//php echo $row['idU']; ?>&action=evaluer"
                   class="btn btn-danger">Delete</a>-->
-                <form action="index.php?delete=<?php echo $row['idU']; ?>&action=evaluer" method="POST">
-                    <button name="delete" value="delete">Delete</button>
+               
+                <form action="index.php?delete&action=evaluer" method="post">
+                    <div>
+                        <input type="hidden" name="delete" value="<?php echo $row['idU']; ?>" />
+                        <input type="submit" value="Supprimer" />
+                        
+                    </div>
                     
                 </form>
             </td>
