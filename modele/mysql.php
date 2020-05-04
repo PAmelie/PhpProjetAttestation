@@ -29,6 +29,29 @@ function read($table, $id){
     return $result;
 }
 
+function readWhere($table, $obj, $id, $id1){
+   global $db;
+   $result = $db->query("SELECT $obj FROM $table WHERE $id=$id1") or die($db->error);
+   return $result;
+    
+}
+
+function readId($table, $id){
+    global $db;
+    $result = "SELECT * FROM $table WHERE id=$id";
+    echo $result;mysqli_query($db, $result);
+}
+
+function edit($table, $id){
+    global $db;
+    $result = "SELECT * FROM $table WHERE id=$id";
+    echo $result;
+    
+    //$result = $db->query("SELECT * FROM $table WHERE id=$id") or die($db->error);
+    //return $result;
+    mysqli_query($db, $result);
+}
+
 
 //fonction pour insérer dans une table
 //$data = array avec ses champs et ses valeurs (ex: "nom" => $nom, ...)
@@ -47,6 +70,22 @@ function insert($table, $data){
     mysqli_query($db, $query);
 }
 
+function update($table, $data, $idT, $id){
+    global $db;
+    $temp = array();
+    foreach ($data as $key => $value){
+        if(gettype($value)== "string"){
+           array_push($temp, "$key = '$value'");
+        } else {
+            array_push($temp, "$key = $value");
+        }
+    }
+    $temp = implode(", ", $temp);
+    $query = "UPDATE $table SET $temp WHERE $idT=$id";
+    echo $query;
+    mysqli_query($db, $query);
+}
+
 
 function delete($table, $idBD, $id){
     global $db;
@@ -55,7 +94,3 @@ function delete($table, $idBD, $id){
     mysqli_query($db, $query);
 }
 
-function update($table, $idDB, $id){
-    global $db;
-    $query = "SELECT * FROM $table WHERE $idDB = $id";
-}

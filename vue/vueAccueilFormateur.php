@@ -3,30 +3,9 @@
 
 require_once "./controleur/evaluer.php"; 
 
-/*if(isset($_GET['edit'])){
-    $id = $_GET['edit'];
-    
-    $rec = mysqli_query($db, "SELECT * FROM into WHERE id=$id");
-    $record = mysqli_fetch_array($rec);
-    $nom = $record ['nom'];
-    $prenom = $record['prenom'];
-    $mail = $record['mail'];
-    $login = $record['login'];
-    $mdp = $record['mdp'];
-    $idAgence = $record['idAgence'];
-    $statut = $record['statut'];    
-}*/
 
-//if(isset($_SESSION['message'])):
 ?>
-<!--<div class="alert alert-<?//=$SESSION['msg_type']?>">
-    
-    <?php
-        /*echo $_SESSION['message'];
-        unset($_SESSION['message']);*/
-    ?>
-</div>-->
-<?php //endif ?>
+
 
 <div class="container"
      
@@ -70,11 +49,12 @@ $result = readAll("utilisateurs");
                   class="btn btn-info">Edit</a>
                <!--<a href="index.php?delete=<?//php echo $row['idU']; ?>&action=evaluer"
                   class="btn btn-danger">Delete</a>-->
+                
                
                 <form action="index.php?delete&action=evaluer" method="post">
                     <div>
                         <input type="hidden" name="delete" value="<?php echo $row['idU']; ?>" />
-                        <input type="submit" value="Supprimer" />
+                        <input type="submit" class="btn btn-danger" value="Supprimer" />
                         
                     </div>
                     
@@ -99,36 +79,46 @@ $result = readAll("utilisateurs");
 <!-- Formulaire nouvel utilisateur -->
 <div class="row justify-content-center">
     <form action="index.php?action=evaluer" method="POST">
+    <!-- cacher la valuer de l'id venant de la methode POST. Valeur mis a $id=0 dans le controleur -->
+    <input type="hidden" name="id" value="<?php echo $id; ?>">  
     <div class="form-group">
     <label>Nom</label>
-    <input type="text" name="nom" class="form-control" placeholder="Entrer le nom">
+    <input type="text" name="nom" class="form-control" value="<?php echo $nom; ?>" placeholder="Entrer le nom">
     </div>
     <div class="form-group">
     <label>Prénom</label>
-    <input type="text" name="prenom" class="form-control" placeholder="Entrer le prénom">
+    <input type="text" name="prenom" class="form-control" value="<?php echo $prenom; ?>" placeholder="Entrer le prénom">
     </div>
      <div class="form-group">
     <label>Mail</label>
-    <input type="text" name="mail" class="form-control" placeholder="Entrer le mail">
+    <input type="text" name="mail" class="form-control" value="<?php echo $mail; ?>" placeholder="Entrer le mail">
     </div>
      <div class="form-group">
     <label>Login</label>
-    <input type="text" name="login" class="form-control" placeholder="Entrer le login">
+    <input type="text" name="login" class="form-control" value="<?php echo $login; ?>" placeholder="Entrer le login">
     </div>
      <div class="form-group">
     <label>Mot de passe</label>
-    <input type="text" name="mdp" class="form-control" placeholder="Entrer le mot de passe">
+    <input type="text" name="mdp" class="form-control" value="<?php echo $mdp; ?>" placeholder="Entrer le mot de passe">
     </div>
      <div class="form-group">
     <label>Id Agende</label>
-    <input type="text" name="idAgence" class="form-control" placeholder="Entrer l'id agence">
+    <input type="text" name="idAgence" class="form-control" value="<?php echo $idAgence; ?>" placeholder="Entrer l'id agence">
     </div>
      <div class="form-group">
     <label>Statut</label>
-    <input type="text" name="statut" class="form-control" placeholder="Entrer le statut">
+    <input type="text" name="statut" class="form-control" value="<?php echo $statut; ?>" placeholder="Entrer le statut">
     </div>
     <div class="form-group">
-    <button type="submit" class="btn btn-primary" name="save">Enregistrer</button>
+    <?php
+    if($update == true):
+    ?> 
+        <button type="submit" class="btn btn-info" name="update">Modifier</button>
+    <?php
+    else:
+    ?>
+        <button type="submit" class="btn btn-primary" name="save">Enregistrer</button>
+    <?php endif; ?>
     </div>
 </form>
     </div>
