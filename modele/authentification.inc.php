@@ -1,6 +1,7 @@
 <?php
 
 require_once "bd.utilisateur.inc.php";
+require_once 'mysql.php';
 
 
 function login($mail, $mdp){
@@ -36,6 +37,19 @@ function logout() {
     }
     unset($_SESSION['mail']);
     unset($_SESSION['mdp']);
+    unset($_SESSION['statut']);
+}
+
+function getStatutLoggedOn() {
+    $mail=$_POST['mail'];        
+    if (isLoggedOn()){
+        $_SESSION['statut']= readWhere("utilisateurs", 'statut', 'mail', $mail);
+        $ret = $_SESSION['statut'];
+    }
+    else {
+        $ret = "";
+    }
+    return $ret;
 }
 
 function getMailLoggedOn(){
