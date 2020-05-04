@@ -12,7 +12,18 @@ require_once "./controleur/evaluer.php";
 <?php
 include_once "./modele/mysql.php";
 $result = readAll("utilisateurs");
+$result1 = readWhere("utilisateurs", "statut", 'idU', 3);
+$result2 = readId("utilisateurs", 1);
 
+//$result3 = $db->query("SELECT * FROM utilisateurs WHERE idU=1 LIMIT 1");
+$result4 = $db->query("SELECT statut FROM utilisateurs WHERE idU=1");
+
+//var_dump($result);
+var_dump($result1);
+echo $result1;
+//var_dump($result2);
+//var_dump($result3);
+//var_dump($result4);
 ?>
      
 <!-- création du tableau avec une boucle while sur $result:  -->

@@ -4,22 +4,12 @@
 
 $titrePage = "TestUtilisateur";
 include "./vue/entete.html.php";
-//session_start();
 
-//initialise les variable
-/*$nom = "";
-$prenom = "";
-$mail = "";
-$login = "";
-$mdp = "";
-$idAgence = "";
-$statut = "";
-$idU = 0;*/
-session_start();
 include_once './modele/mysql.php';
 
 $id = 0;
 $update = false;
+
 
 
 //initie les valeur pour que les boxes du formulaire reste vides s'il n'y a pas d'update
@@ -53,6 +43,7 @@ if (isset($_POST['save'])){
     );
             
     insert("utilisateurs", $data); 
+    echo $_POST['statut'];
         
    /* $_SESSION['message'] = "Nouvelles données enregistrées";
     $_SESSION['msg_type'] = "success";

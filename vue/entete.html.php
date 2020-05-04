@@ -28,7 +28,7 @@ require_once './modele/mysql.php';
 <!-- Page Wrapper -->
 <div id="wrapper">
 <?php 
-//if (getStatutLoggedOn()==1||getStatutLoggedOn()==2){
+if ($_SESSION['statut']==1){
 ?>
     <!-- Sidebar -->
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
@@ -139,7 +139,7 @@ require_once './modele/mysql.php';
     <!-- End of Sidebar -->
             
 <?php
-//}
+}
 ?>
 
     <!-- Content Wrapper -->

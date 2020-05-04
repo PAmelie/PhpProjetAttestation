@@ -38,6 +38,8 @@ function getUtilisateurByMail($login) {
     return $resultat;
 }
 
+
+
 // teste des fonctions en dur (defauts si modification dans la BD)
 //option d'amélioration = voir test unitaire.
 if ($_SERVER["SCRIPT_FILENAME"] == __FILE__) {

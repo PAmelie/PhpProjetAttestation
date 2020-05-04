@@ -26,20 +26,28 @@ function readAll($table){
 function read($table, $id){
     global $db;
     $result = $db->query("SELECT $id FROM $table") or die($db->error);
-    return $result;
+    return $result->fetch_row()[0];
 }
 
 function readWhere($table, $obj, $id, $id1){
    global $db;
-   $result = $db->query("SELECT $obj FROM $table WHERE $id=$id1") or die($db->error);
-   return $result;
+
+   $result = $db->query("SELECT $obj FROM $table WHERE $id=$id1");
+   $var = $result ->fetch_row();
+   var_dump($var);
+   foreach($var as $value){
+       echo $var[0];  
+   }
+   return $var[0];
+  
     
 }
 
 function readId($table, $id){
     global $db;
     $result = "SELECT * FROM $table WHERE id=$id";
-    echo $result;mysqli_query($db, $result);
+    echo $result;
+    mysqli_query($db, $result);
 }
 
 function edit($table, $id){

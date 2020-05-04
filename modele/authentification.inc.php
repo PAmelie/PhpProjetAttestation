@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require_once "bd.utilisateur.inc.php";
 require_once 'mysql.php';
 
@@ -27,9 +27,9 @@ function login($mail, $mdp){
         
         $_SESSION['mail'] = $mail;
         $_SESSION['mdp'] = $mdpBD;
-            }
-              
+       
 }
+
 
 function logout() {
     if (!isset($_SESSION)) {
@@ -41,9 +41,10 @@ function logout() {
 }
 
 function getStatutLoggedOn() {
-    $mail=$_POST['mail'];        
+    global $db;
+    //$mail=$_POST['mail'];        
     if (isLoggedOn()){
-        $_SESSION['statut']= readWhere("utilisateurs", 'statut', 'mail', $mail);
+        $_SESSION['statut']= readWhere("utilisateurs, 'statut', 'mail', $mail");
         $ret = $_SESSION['statut'];
     }
     else {
@@ -71,10 +72,19 @@ function isLoggedOn() {
 
     if (isset($_SESSION['mail'])) {
         $util = getUtilisateurByMail($_SESSION['mail']);
-        if ($util['mail'] == $_SESSION['mail'] && $util['mdp'] == $_SESSION['mdp']
-        ) {
+        if ($util['mail'] == $_SESSION['mail'] && $util['mdp'] == $_SESSION['mdp']) {
             $ret = true;
+            echo "bonjour";
+            //echo $_POST[$mail];
+            if($mail != ""){
+                echo "bonjour2";
+                $_SESSION['statut'] = getStatutLoggedOn();
+            }
+            else{
+                echo "blabla";
+            }              
         }
     }
     return $ret;
+}
 }
