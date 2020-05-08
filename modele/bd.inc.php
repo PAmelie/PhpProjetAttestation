@@ -8,6 +8,7 @@ static function getInstance() {
     $mdp = "";
     $bd = "competence";
     $serveur = "127.0.0.1";
+    
 
     try {
         $conn = new PDO("mysql:host=$serveur;dbname=$bd", $login, $mdp, array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\'')); 
