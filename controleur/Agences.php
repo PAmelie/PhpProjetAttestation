@@ -1,9 +1,7 @@
 <?php
 //todo : les require en controleur principal
-
-
-$titrePage = "TestUtilisateur";
 include "../vue/entete.html.php";
+include_once '../modele/mysql.php';
 //session_start();
 
 //initialise les variableoleur
@@ -16,12 +14,12 @@ $idAgence = "";
 $statut = "";
 $idU = 0;*/
 
-include_once '../modele/mysql.php';
 
-// creation d'un utilisateur     
+
+// creation d'une Agence     
 if (isset($_POST['save'])){
     
-    $nom = $_POST['nom'];
+    $nom = $_POST['ville'];
     $prenom = $_POST['prenom'];
     $mail = $_POST['mail'];
     $login = $_POST['login'];

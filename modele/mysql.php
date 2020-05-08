@@ -20,7 +20,11 @@ function readAll($table){
     $result = $db->query("SELECT * From $table") or die($db->error);
     return $result;
 }
-
+function readWhere($table, $obj, $id, $id1){
+    global $db;
+    $result = $db->query("SELECT $obj FROM $table WHERE $id=$id1") or die($db->error);
+    return $result;
+}
 //fonction pour insérer dans une table
 //$data = array avec ses champs et ses valeurs (ex: "nom" => $nom, ...)
 function insert($table, $data){
