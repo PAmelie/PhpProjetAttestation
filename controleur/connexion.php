@@ -3,7 +3,7 @@
 
  
 if ( $_SERVER["SCRIPT_FILENAME"] == __FILE__ ){
-    $racine="..";
+    $racine=".";
 }
 include_once "$racine/modele/authentification.inc.php";
 
