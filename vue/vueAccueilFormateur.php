@@ -1,7 +1,7 @@
 <?php 
 
 
-require_once "../controleur/evaluer.php"; 
+require_once "./controleur/evaluer.php"; 
 
 
 ?>
@@ -68,11 +68,6 @@ $result = readAll("utilisateurs");
 
 <?php
 
-/*function pre_r($array){
-    echo'<pre>';
-    print_r($array);
-    echo'</pre>';
-}*/
 ?>
 
 <!-- Formulaire nouvel utilisateur -->
