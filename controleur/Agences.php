@@ -1,7 +1,7 @@
 <?php
 //todo : les require en controleur principal
-include "../vue/entete.html.php";
-include_once '../modele/mysql.php';
+include "./vue/entete.html.php";
+include_once './modele/mysql.php';
 //session_start();
 
 //initialise les variableoleur
@@ -66,6 +66,6 @@ if (isset($_GET['edit'])){
     $id = $_GET['edit'];
 
 }
-include "../vue/vueAccueilFormateur.php";
-include "../vue/pied.html.php";
+include "./vue/vueAccueilFormateur.php";
+include "./vue/pied.html.php";
 ?>
