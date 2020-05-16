@@ -28,7 +28,7 @@ require_once './modele/mysql.php';
 <!-- Page Wrapper -->
 <div id="wrapper">
 <?php 
-if ($_SESSION['statut']==1){
+//if ($_SESSION['statut']==1){
 ?>
     <!-- Sidebar -->
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
@@ -64,14 +64,14 @@ if ($_SESSION['statut']==1){
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseVentes" aria-expanded="true" aria-controls="collapseVentes">
                 <i class="fas fa-fw fa-folder"></i>
-                <span>Ventes</span>
+                <span>Gestion</span>
             </a>
             <div id="collapseVentes" class="collapse" aria-labelledby="headingVentes" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Mon Dossier Ventes:</h6>
-                    <a class="collapse-item" href="buttons.html">Sous Dossier A</a>
-                    <a class="collapse-item" href="cards.html">Sous Dossier B</a>
-                </div>
+                    <h6 class="collapse-header">Mon Dossier Gestion:</h6>
+                    <a class="collapse-item" href="index.php?action=evaluer">Utilisateur</a>
+                    <a class="collapse-item" href="cards.html">Agence</a>
+                    <a class="collapse-item" href="buttons.html">Formation</a>
             </div>
         </li>
 
@@ -79,12 +79,12 @@ if ($_SESSION['statut']==1){
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFactures" aria-expanded="true" aria-controls="collapseFactures">
                 <i class="fas fa-fw fa-folder"></i>
-                <span>Factures</span>
+                <span>Tableau</span>
             </a>
             <div id="collapseFactures" class="collapse" aria-labelledby="headingFactures" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Mon Dossier Factures:</h6>
-                    <a class="collapse-item" href="utilities-color.html">Sous Dossier A</a>
+                    <h6 class="collapse-header">Modification tableau:</h6>
+                    <a class="collapse-item" href="index.php?action=modifier">Mon tableau</a>
                     <a class="collapse-item" href="utilities-border.html">Sous Dossier B</a>
                     <a class="collapse-item" href="utilities-animation.html">Sous Dossier C</a>
                     <a class="collapse-item" href="utilities-other.html">Sous Dossier D</a>
@@ -139,7 +139,7 @@ if ($_SESSION['statut']==1){
     <!-- End of Sidebar -->
             
 <?php
-}
+//}
 ?>
 
     <!-- Content Wrapper -->
