@@ -5,7 +5,7 @@
 $titrePage = "TestUtilisateur";
 include "./vue/entete.html.php";
 
-include_once '../modele/mysql.php';
+include_once './modele/mysql.php';
 
 $id = 0;
 $update = false;
@@ -110,6 +110,6 @@ if(isset($_POST['update'])){
     
     update("utilisateurs", $data, "idU", $id);
 }
-include "../vue/vueAccueilFormateur.php";
-include "../vue/pied.html.php";
+include "./vue/vueAccueilFormateur.php";
+include "./vue/pied.html.php";
 ?>
