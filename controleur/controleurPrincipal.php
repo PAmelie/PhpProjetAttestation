@@ -6,6 +6,7 @@ function controleurPrincipal($action) {
     $lesActions["connexion"] = "connexion.php";
     $lesActions["motdepasse"] = "motDePasseOubli.php";
     $lesActions["evaluer"] = "evaluer.php";
+    $lesActions["modifier"] = "modifier.php";
 
     if (array_key_exists($action, $lesActions)) {
         return $lesActions[$action];
