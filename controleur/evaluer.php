@@ -2,9 +2,8 @@
 //todo : les require en controleur principal
 
 
-$titrePage = "TestUtilisateur";
+$titre = "Gestion des utilisateurs";
 include "./vue/entete.html.php";
-
 include_once './modele/mysql.php';
 
 $id = 0;
@@ -43,7 +42,7 @@ if (isset($_POST['save'])){
     );
             
     insert("utilisateurs", $data); 
-    echo $_POST['statut'];
+ 
         
    /* $_SESSION['message'] = "Nouvelles données enregistrées";
     $_SESSION['msg_type'] = "success";

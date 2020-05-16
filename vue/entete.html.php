@@ -69,9 +69,9 @@ require_once './modele/mysql.php';
             <div id="collapseVentes" class="collapse" aria-labelledby="headingVentes" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Mon Dossier Gestion:</h6>
-                    <a class="collapse-item" href="index.php?action=evaluer">Utilisateur</a>
-                    <a class="collapse-item" href="cards.html">Agence</a>
-                    <a class="collapse-item" href="buttons.html">Formation</a>
+                    <a class="collapse-item" href="index.php?action=Utilisateurs">Utilisateur</a>
+                    <a class="collapse-item" href="index.php?action=Agences">Agence</a>
+                    <a class="collapse-item" href="index.php?action=Formation">Formation</a>
             </div>
         </li>
 
