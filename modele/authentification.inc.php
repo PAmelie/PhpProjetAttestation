@@ -26,7 +26,14 @@ function login($mail, $mdp){
         // trim — Supprime les espaces (ou d'autres caractères) en début et fin de chaîne
         
         $_SESSION['mail'] = $mail;
-        $_SESSION['mdp'] = $mdpBD;
+        $_SESSION['idU'] = $util['idU'];
+        $_SEESION['idAgence']=$util['idAgence'];
+        $_SESSION['statut']= $util['statut'];
+        return true;
+    }
+    else{
+        return false;
+    }
        
 }
 
@@ -74,7 +81,7 @@ function isLoggedOn() {
         $util = getUtilisateurByMail($_SESSION['mail']);
         if ($util['mail'] == $_SESSION['mail'] && $util['mdp'] == $_SESSION['mdp']) {
             $ret = true;
-            echo "bonjour";
+            /*echo "bonjour";
             //echo $_POST[$mail];
             if($mail != ""){
                 echo "bonjour2";
@@ -82,9 +89,8 @@ function isLoggedOn() {
             }
             else{
                 echo "blabla";
-            }              
+            } */             
         }
     }
     return $ret;
-}
 }
