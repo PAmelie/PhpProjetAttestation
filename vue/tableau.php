@@ -22,6 +22,7 @@ function initAcqEleve($idEleve){
     endwhile;
 }
 initAcqEleve($idEleve);
+
 $acquisitionlevelresult = $db -> query("SELECT idSST, niveau FROM acquisition WHERE idEleve=$idEleve");
 $acquisitionlevel = array();
 

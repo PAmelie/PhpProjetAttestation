@@ -76,6 +76,7 @@ require_once './modele/mysql.php';
                     <a class="collapse-item" href="index.php?action=Utilisateurs">Utilisateur</a>
                     <a class="collapse-item" href="index.php?action=Agences">Agence</a>
                     <a class="collapse-item" href="index.php?action=Formation">Formation</a>
+                    <a class="collapse-item" href="index.php?action=Eleves">Eleves</a>
             </div>
         </li>
         <?php

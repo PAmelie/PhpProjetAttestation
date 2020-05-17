@@ -10,7 +10,7 @@ function controleurPrincipal($action) {
     $lesActions["Agences"] = "Agences.php";
     $lesActions["Formation"] = "Formation.php";
     $lesActions["Utilisateurs"] = "Utilisateurs.php";
-    $lesActions["tableau"] = "tableau.php";
+    $lesActions["Eleves"] = "Eleves.php";
 
     if (array_key_exists($action, $lesActions)) {
         return $lesActions[$action];
