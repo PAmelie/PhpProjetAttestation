@@ -12,6 +12,7 @@ function login($mail, $mdp){
     $util = getUtilisateurByMail($mail);
     $mdpBD = $util['mdp'];
     $grainDeSel = $util['graindesel'];
+    $idU = $util['idU'];
     
     // lors création utilisateurt, utiliser cette fomule pour créer son grain de sel et l'insérer dans table utilisateurs
     //Grain de sel = ID unique al$grainDeSel = rand(time(),strlen(time()));éatoire, ici du  basé sur le temps (11 octets) :
@@ -26,9 +27,12 @@ function login($mail, $mdp){
         // trim — Supprime les espaces (ou d'autres caractères) en début et fin de chaîne
         
         $_SESSION['mail'] = $mail;
-        $_SESSION['idU'] = $util['idU'];
-        $_SEESION['idAgence']=$util['idAgence'];
+        $_SESSION['idU'] = $idU;
+        $_SESSION['idAgence']=$util['idAgence'];
         $_SESSION['statut']= $util['statut'];
+        $_SESSION['nom'] = $util['nom'];
+        $_SESSION['prenom'] = $util['prenom'];
+        $_SESSION['mdp'] = $mdp;
         return true;
     }
     else{

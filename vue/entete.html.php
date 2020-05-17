@@ -27,9 +27,9 @@ require_once './modele/mysql.php';
 
 <!-- Page Wrapper -->
 <div id="wrapper">
-<?php 
-//if ($_SESSION['statut']==1){
-?>
+
+    
+
     <!-- Sidebar -->
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
@@ -61,6 +61,10 @@ require_once './modele/mysql.php';
         </div>
 
         <!-- Nav Item - Ventes Collapse Menu -->
+        
+        <?php 
+        if ($_SESSION['statut']==0){
+        ?>
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseVentes" aria-expanded="true" aria-controls="collapseVentes">
                 <i class="fas fa-fw fa-folder"></i>
@@ -74,6 +78,10 @@ require_once './modele/mysql.php';
                     <a class="collapse-item" href="index.php?action=Formation">Formation</a>
             </div>
         </li>
+        <?php
+        }
+        else{
+        ?>
 
         <!-- Nav Item - Factures Collapse Menu -->
         <li class="nav-item">
@@ -126,6 +134,10 @@ require_once './modele/mysql.php';
                 </div>
             </div>
         </li>
+        
+        <?php
+        }
+        ?>
 
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block">
@@ -138,9 +150,7 @@ require_once './modele/mysql.php';
     </ul>
     <!-- End of Sidebar -->
             
-<?php
-//}
-?>
+
 
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">

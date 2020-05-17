@@ -33,6 +33,5 @@ else{ // l'utilisateur n'est pas connecté, on affiche le formulaire de connexio
 
     $titre = "connexion";
     include "$racine/vue/entete.html.php";
-    include "$racine/vue/vueConnexion.php";
     include "$racine/vue/pied.html.php";
 }

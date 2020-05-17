@@ -16,35 +16,27 @@
    
 
 </head>
-  <body id="page-top">
+<body id="page-top" leftmargin=20px>
 <!--&lt;!&ndash; Page Heading &ndash;&gt;-->
-                <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                    <h1 class="h3 mb-0 text-gray-800" id="NomDossierSide">Accueil</h1>
-                
-                </div>
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800" id="NomDossierSide">Connexion</h1>
+
+    </div>
 
  <!--      &lt;!&ndash; Content Row &ndash;&gt;-->
-                <div class="row">
-                        
+    <div class="row">
+        <form action="./?action=connexion" method="POST" margin=20px>
 
-<form action="./?action=connexion" method="POST">
+            <input type="text" name="mail" placeholder="Email de connexion" autocomplete="off" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$" required/><br />
+            <input type="password" name="mdp" placeholder="Mot de passe"  autocomplete="off" required/><br />
+            <input type="submit" />
+        </form>
+        <br/>    
+    </div>
+    <a href="./?action=motdepasse"> Mot de passe oublié</a>
 
-    <input type="text" name="mail" placeholder="Email de connexion" autocomplete="off" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$" required/><br />
-    <input type="password" name="mdp" placeholder="Mot de passe"  autocomplete="off" required/><br />
-    <input type="submit" />
-
-</form>
-<br />
-                   
-                    
-                 
-                </div>
- <a href="./?action=motdepasse"> Mot de passe oublié</a>
-
-            </div>
             <!-- /.container-fluid -->
 
-        </div>
         <!-- End of Main Content -->
 </body>
 

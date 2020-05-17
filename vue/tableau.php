@@ -5,8 +5,8 @@ include_once "./modele/mysql.php";
 $result=readAll ("themes");
 
 
-if ($_SESSION["statut"]==2){
-    $idEleve=$_SESSION['idU'];
+if($_SESSION["statut"]==2){
+    $idEleve = $_SESSION['idU'];
 }
 else{
     $idEleve = $_SESSION["idEleve"];
