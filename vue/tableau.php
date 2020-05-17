@@ -11,13 +11,22 @@ if($_SESSION["statut"]==2){
 else{
     $idEleve = $_SESSION["idEleve"];
 }
-echo $idEleve;
 
+function initAcqEleve($idEleve){
+    global $db;
+    $result = $db->query("SELECT idSST FROM themesoustheme WHERE idSST NOT IN"
+            . "(SELECT idSST FROM acquisition WHERE idEleve = $idEleve)");
+    while($rowacq = $result->fetch_array(MYSQLI_NUM)):
+        $idSST = $rowacq[0];
+        $db->query("INSERT INTO acquisition (idSST, idEleve, niveau) VALUES ($idSST, $idEleve, 1)");
+    endwhile;
+}
+initAcqEleve($idEleve);
 $acquisitionlevelresult = $db -> query("SELECT idSST, niveau FROM acquisition WHERE idEleve=$idEleve");
 $acquisitionlevel = array();
 
 while($rowAcq = $acquisitionlevelresult->fetch_array(MYSQLI_NUM)):
-    $acquisitionlevel[$rowAcq[0]] = $rowAcq[1];
+    $acquisitionlevel[intval($rowAcq[0])] = $rowAcq[1];
 endwhile;
 
 
@@ -42,7 +51,7 @@ function echoOption($idSST, $value, $texte){
                          
                         ?>
                         <tr>
-                            <th><?php echo $rowTheme['nom'];?></th>;
+                            <th><?php echo $rowTheme['nom'];?></th>
                             <th>Niveau d'acquisition</th>
                         </tr>
                         <?php
@@ -64,14 +73,14 @@ function echoOption($idSST, $value, $texte){
                                     <td>
                                         <?php $idSST = $rowSSTheme["idSST"];
                                         ?>
-                                        <input type="hidden" name="eleve" value=<?php echo "$idEleve"?>/>;
-                                        <input type="hidden" name="idSST" value=<?php echo"$idSST"?>/>;
-                                        <select name="acquisition" size="1">
+                                        <input type="hidden" name="eleve" value=<?php echo "$idEleve"?>>
+                                        <input type="hidden" name="idSST" value=<?php echo"$idSST"?>>
+                                        <select name="acquisition" size="1" onchange="this.form.submit()">
                                             <?php
-                                            echoOption($idSST, "1", "Non acquis"); 
-                                            echoOption($idSST, "2", "Partiellement acquis");
-                                            echoOption($idSST, "3", "Acquis");
-                                            echoOption($idSST, "4", "Dépassé");
+                                            echoOption($idSST, 1, "Non acquis"); 
+                                            echoOption($idSST, 2, "Partiellement acquis");
+                                            echoOption($idSST, 3, "Acquis");
+                                            echoOption($idSST, 4, "Dépassé");
                                             ?>
                                         </select>
                                     </td>
