@@ -11,19 +11,22 @@ if($_SESSION["statut"]==2){
 else{
     $idEleve = $_SESSION["idEleve"];
 }
+echo $idEleve;
 
 $acquisitionlevelresult = $db -> query("SELECT idSST, niveau FROM acquisition WHERE idEleve=$idEleve");
 $acquisitionlevel = array();
+
 while($rowAcq = $acquisitionlevelresult->fetch_array(MYSQLI_NUM)):
     $acquisitionlevel[$rowAcq[0]] = $rowAcq[1];
 endwhile;
 
+
 function echoOption($idSST, $value, $texte){
     global $acquisitionlevel;
-    if($value == int($acquisitionlevel[$idSST])){
-        echo "<option selected value=$value>$texte";
+    if($value == intval($acquisitionlevel[$idSST])){
+        echo "<option selected value=$value>$texte </option>";
     } else {
-        echo "<option value=$value>$texte";
+        echo "<option value=$value>$texte </option>";
     }
 }
 ?>                                               
@@ -59,16 +62,17 @@ function echoOption($idSST, $value, $texte){
                                     <td><?php echo $rowSSTheme['intitule'];?></td>
                                     <form action="index.php?delete&action=modifier" method="post">
                                     <td>
-                                        <?php $idSST = $rowSSTheme["idSST"];?>
+                                        <?php $idSST = $rowSSTheme["idSST"];
+                                        ?>
                                         <input type="hidden" name="eleve" value=<?php echo "$idEleve"?>/>;
                                         <input type="hidden" name="idSST" value=<?php echo"$idSST"?>/>;
                                         <select name="acquisition" size="1">
-                                        <?php 
-                                        echoOption($idSST, 1, "Non acquis");
-                                        echoOption($idSST, 2, "Partiellement acquis");
-                                        echoOption($idSST, 3, "Acquis");
-                                        echoOption($idSST, 4, "Dépassé");
-                                        ?>
+                                            <?php
+                                            echoOption($idSST, "1", "Non acquis"); 
+                                            echoOption($idSST, "2", "Partiellement acquis");
+                                            echoOption($idSST, "3", "Acquis");
+                                            echoOption($idSST, "4", "Dépassé");
+                                            ?>
                                         </select>
                                     </td>
                                     </form>
