@@ -51,7 +51,7 @@ function echoOption($idSST, $value, $texte){
                     while($rowTheme = $result->fetch_assoc()):
                          
                         ?>
-                        <tr>
+                        <tr bgcolor = "#00FF00">
                             <th><?php echo $rowTheme['nom'];?></th>
                             <th>Niveau d'acquisition</th>
                         </tr>
@@ -60,15 +60,15 @@ function echoOption($idSST, $value, $texte){
                         $soustheme =  $db->query("SELECT * FROM sousthemes WHERE idT=$idT");
                         while($rowSTheme = $soustheme->fetch_assoc()):
                             ?>
-                            <tr>
+                            <tr bgcolor = "#FFA500">
                                 <td><?php echo $rowSTheme['nom'];?></td>
                             </tr>
                             <?php 
                             $idST = $rowSTheme['idST'];
                             $sousoustheme = $db->query("SELECT * FROM themesoustheme WHERE idST=$idST");
                             while($rowSSTheme = $sousoustheme->fetch_assoc()):
-                                ?>
-                                <tr>
+                            ?>
+                                <tr bgcolor="#EBF4FA">
                                     <td><?php echo $rowSSTheme['intitule'];?></td>
                                     <form action="index.php?delete&action=modifier" method="post">
                                     <td>
