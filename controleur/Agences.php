@@ -21,26 +21,18 @@ if (isset($_POST['save'])){
     $data = array(
         "ville" => $ville,
         "mail" => $mail,
-
     );
             
-    insert("Agences", $data); 
-        
-    //$_SESSION['message'] = "Nouvelles données enregistrées";
-    //$_SESSION['msg_type'] = "success";
-    
-    //header("location: ./vue/vueAccueilFormateur.php");
-    
+    insert("Agences", $data);   
 }
 
-//delete
-//$id = $_GET['id'];
-
+// suppression d'une agence
 if (isset($_POST['delete'])){
     $idBD = "idA";
     delete("agences", $idBD, $_POST['delete']);
 }
 
+// selectionner une agence pour pouvoir la modifier
 if (isset($_GET['edit'])){
     global $db;
     $id = $_GET['edit'];
@@ -56,6 +48,7 @@ if (isset($_GET['edit'])){
     }
 }
 
+//enregistrer les modification apporté a l'agence
 if(isset($_POST['update'])){
     $id= $_POST['id'];
     $ville = $_POST['ville'];

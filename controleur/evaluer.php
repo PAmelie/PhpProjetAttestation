@@ -1,6 +1,6 @@
 <?php
-//todo : les require en controleur principal
 
+//page test pour gérer les données (créer, modifier, supprimer)
 
 $titre = "Gestion des utilisateurs";
 include "./vue/entete.html.php";
@@ -43,26 +43,16 @@ if (isset($_POST['save'])){
             
     insert("utilisateurs", $data); 
  
-        
-   /* $_SESSION['message'] = "Nouvelles données enregistrées";
-    $_SESSION['msg_type'] = "success";
-    
-    header("location: .php");*/
+ 
     
 }
 
-//delete
-//$id = $_GET['id'];
 
 if (isset($_POST['delete'])){
     $idBD = "idU";
     delete("utilisateurs", $idBD, $_POST['delete']);
 }
 
-//if (isset($_GET['edit'])){
-//    $idBD = "idU";
-//    $id = $_GET['edit'];
-//}
 
 
 if(isset($_GET['edit'])){
@@ -95,7 +85,6 @@ if(isset($_POST['update'])){
     $idAgence = $_POST['idAgence'];
     $statut = $_POST['statut'];
     
-    //$result = $db->query("UPDATE utilisateurs SET nom='$nom', prenom='$prenom', mail='$mail', login='$login', mdp='$mdp', idAgence='$idAgence', statut='$statut' WHERE idU=$id");
     
     $data = array(
         "nom" => $nom,

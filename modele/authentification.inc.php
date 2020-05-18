@@ -5,9 +5,6 @@ require_once 'mysql.php';
 
 
 function login($mail, $mdp){
-    /*if(!isset($_SESSION)) {
-        session_start();
-    }*/
     
     $util = getUtilisateurByMail($mail);
     $mdpBD = $util['mdp'];
@@ -26,6 +23,7 @@ function login($mail, $mdp){
     if(trim($mdpBD)== trim($hash_v1)){
         // trim — Supprime les espaces (ou d'autres caractères) en début et fin de chaîne
         
+        // récupération des éléments importants pour la session
         $_SESSION['mail'] = $mail;
         $_SESSION['idU'] = $idU;
         $_SESSION['idAgence']=$util['idAgence'];
@@ -51,6 +49,8 @@ function logout() {
     unset($_SESSION['statut']);
 }
 
+
+/* Fonction inutile
 function getStatutLoggedOn() {
     global $db;
     //$mail=$_POST['mail'];        
@@ -62,7 +62,8 @@ function getStatutLoggedOn() {
         $ret = "";
     }
     return $ret;
-}
+}*/
+
 
 function getMailLoggedOn(){
     if (isLoggedOn()){
@@ -84,16 +85,7 @@ function isLoggedOn() {
     if (isset($_SESSION['mail'])) {
         $util = getUtilisateurByMail($_SESSION['mail']);
         if ($util['mail'] == $_SESSION['mail'] && $util['mdp'] == $_SESSION['mdp']) {
-            $ret = true;
-            /*echo "bonjour";
-            //echo $_POST[$mail];
-            if($mail != ""){
-                echo "bonjour2";
-                $_SESSION['statut'] = getStatutLoggedOn();
-            }
-            else{
-                echo "blabla";
-            } */             
+            $ret = true;            
         }
     }
     return $ret;

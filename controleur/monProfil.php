@@ -1,4 +1,7 @@
 <?php
+
+//AUTRE PAGE TEST
+
 //todo : les require en controleur principal
 require_once "$racine/modele/bd.inc.php";
 require_once "$racine/modele/DAO/DAOAgences.php";

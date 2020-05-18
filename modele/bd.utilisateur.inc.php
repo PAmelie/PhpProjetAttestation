@@ -22,8 +22,8 @@ function getUtilisateurs() {
     return $resultat;
 }
 
+//fonction pour récupérer les données de l'utilisateur en fonction de son mail
 function getUtilisateurByMail($login) {
-   
    try {
         $cnx = Connexion::getInstance();
         $req = $cnx->prepare("select * from utilisateurs where mail=:mail");

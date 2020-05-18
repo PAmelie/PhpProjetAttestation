@@ -2,15 +2,11 @@
 
 //mysql.php = connection a la BD et creation des fonctions pour le CRUD
 
-
-
-
 //connection a la BD
 $servername = 'localhost';
 $username = 'root';
 $password = '';
 $dbname = 'competence';
-
 
 
 $db = new mysqli($servername, $username, $password, $dbname);
@@ -43,13 +39,11 @@ function readId($table, $id){
     mysqli_query($db, $result);
 }
 
+// fonction pas utilisée
 function edit($table, $id){
     global $db;
     $result = "SELECT * FROM $table WHERE id=$id";
     echo $result;
-    
-    //$result = $db->query("SELECT * FROM $table WHERE id=$id") or die($db->error);
-    //return $result;
     mysqli_query($db, $result);
 }
 
@@ -71,6 +65,7 @@ function insert($table, $data){
     mysqli_query($db, $query);
 }
 
+//fonction pour modifier les données dans la BD
 function update($table, $data, $idT, $id){
     global $db;
     $temp = array();
@@ -88,6 +83,7 @@ function update($table, $data, $idT, $id){
 }
 
 
+//fonction pour supprimer une donnée dans la BD
 function delete($table, $idBD, $id){
     global $db;
     $query = "DELETE FROM $table WHERE $idBD = $id";

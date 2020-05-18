@@ -17,13 +17,13 @@
 
 </head>
 <body id="page-top" leftmargin=20px>
-<!--&lt;!&ndash; Page Heading &ndash;&gt;-->
+<!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800" id="NomDossierSide">Connexion</h1>
 
     </div>
 
- <!--      &lt;!&ndash; Content Row &ndash;&gt;-->
+ <!--   Content Row -->
     <div class="row">
         <form action="./?action=connexion" method="POST" margin=20px>
 

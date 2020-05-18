@@ -10,7 +10,7 @@ $update = false;
 //initie les valeur pour que les boxes du formulaire reste vides s'il n'y a pas d'update
 $nom = '';
 
-// creation d'une Agence     
+// creation d'une formation     
 if (isset($_POST['save'])){
     
     $nom = $_POST['nom'];
@@ -23,12 +23,14 @@ if (isset($_POST['save'])){
 }
 
 
-
+//supression d'une formation
 if (isset($_POST['delete'])){
     $idBD = "idF";
     delete("formations", $idBD, $_POST['delete']);
 }
 
+
+//selectionner une formation pour pouvoir la modifier
 if (isset($_GET['edit'])){
     global $db;
     $id = $_GET['edit'];
@@ -43,6 +45,7 @@ if (isset($_GET['edit'])){
     }
 }
 
+//enregistrer les modification apporté a la formation
 if(isset($_POST['update'])){
     $id= $_POST['id'];
     $nom = $_POST['nom'];

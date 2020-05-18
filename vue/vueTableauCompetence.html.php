@@ -1,4 +1,8 @@
 <?php 
+
+// premier tableau non utilisé
+
+
 require_once "../modele/authentification.inc.php";
 include_once "../modele/mysql.php";
 $result=readAll ("themes");

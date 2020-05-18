@@ -1,9 +1,5 @@
 <?php 
-
-
 require_once "./controleur/Utilisateurs.php"; 
-
-
 ?>
 
 
@@ -31,6 +27,7 @@ $result = readAll("utilisateurs");
         </thead>
         
  <?php
+ //boucle pour afficher les données utilisateurs dans le tableau
  while($row = $result->fetch_assoc()):
  ?>
         
@@ -43,20 +40,15 @@ $result = readAll("utilisateurs");
             <td><?php echo $row['idAgence']; ?></td>
             <td><?php echo $row['statut']; ?></td>
             <td>
-                <!-- TODO : boutton "delete" et "update"  -->
+                <!-- Bouton "edit" pour récupérer les données de la ligne et les envoyer dans le formulaire  -->
                <a href="index.php?edit=<?php echo $row['idU']; ?>&action=evaluer"
                   class="btn btn-info">Edit</a>
-               <!--<a href="index.php?delete=<?//php echo $row['idU']; ?>&action=evaluer"
-                  class="btn btn-danger">Delete</a>-->
-                
-               
+                <!-- Bouton "delete" pour supprimer les données de la ligne -->
                 <form action="index.php?delete&action=evaluer" method="post">
                     <div>
                         <input type="hidden" name="delete" value="<?php echo $row['idU']; ?>" />
                         <input type="submit" class="btn btn-danger" value="Supprimer" />
-                        
                     </div>
-                    
                 </form>
             </td>
         </tr>
@@ -107,10 +99,12 @@ $result = readAll("utilisateurs");
     <?php
     if($update == true):
     ?> 
+        <!-- Bouton "update" pour enregistrer les données modifiées dans la BD, ne s'affiche que pour la modification de données -->
         <button type="submit" class="btn btn-info" name="update">Modifier</button>
     <?php
     else:
     ?>
+        <!-- Bouton "save" pour enregistrer les nouvelles données dans la BD, s'affiche pour la création d'un utilisateur -->
         <button type="submit" class="btn btn-primary" name="save">Enregistrer</button>
     <?php endif; ?>
     </div>

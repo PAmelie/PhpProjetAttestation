@@ -1,5 +1,5 @@
-<?
-
+<?php
+// NON utilisé
 ?>
 <div class="row justify-content-center">
     <table class="table">
