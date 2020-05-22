@@ -11,6 +11,7 @@ function controleurPrincipal($action) {
     $lesActions["Formation"] = "Formation.php";
     $lesActions["Utilisateurs"] = "Utilisateurs.php";
     $lesActions["Eleves"] = "Eleves.php";
+    $lesActions["makepdf"] = "makepdf.php";
 
     if (array_key_exists($action, $lesActions)) {
         return $lesActions[$action];

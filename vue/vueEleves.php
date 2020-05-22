@@ -13,8 +13,9 @@ require_once "./controleur/Eleves.php";
 <?php
 include_once "./modele/mysql.php";
 global $db;
-$result = $db->query("SELECT nom, prenom FROM utilisateurs WHERE status=2");
-$rowEleve = $result->fetch_assoc()
+//$result = $db->query("SELECT nom, prenom FROM utilisateurs WHERE status=2");
+//$rowEleve = $result->fetch_assoc()
+$result = readAll("utilisateurs");
 
 ?>
      
@@ -30,28 +31,24 @@ $rowEleve = $result->fetch_assoc()
         </thead>
         
  <?php
- while($row = $result->fetch_array(MYSQLI_ASSOC)):
+ //while($row = $result->fetch_array(MYSQLI_ASSOC)):
+ while($row = $result->fetch_assoc()):
+     
  ?>
         
         <tr>
             <td><?php echo $row['nom']; ?></td>
             <td><?php echo $row['prenom']; ?></td>
             <td>
-                <!-- TODO : boutton "delete" et "update"  -->
-               <a href="index.php?edit=<?php echo $row['idA']; ?>&action=Agences"
-                  class="btn btn-info">Edit</a>
-               <!--<a href="index.php?delete=<?//php echo $row['idU']; ?>&action=evaluer"
-                  class="btn btn-danger">Delete</a>-->
-                
-               
-                <form action="index.php?delete&action=Agences" method="post">
+                 <form action="index.php?delete&action=modifier" method="post">
                     <div>
-                        <input type="hidden" name="delete" value="<?php echo $row['idA']; ?>" />
-                        <input type="submit" class="btn btn-danger" value="Supprimer" />
+                        <input type="hidden" name="modifier" value="<?php echo $row['idU']; ?>" />
+                        <input type="submit" class="btn btn-info" value="Tableau" />
                         
                     </div>
                     
                 </form>
+              
             </td>
         </tr>
         

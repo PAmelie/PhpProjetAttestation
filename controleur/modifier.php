@@ -2,7 +2,7 @@
 
 //TODO 
 
-$titrePage = "TestUtilisateur";
+$titre = "Tableau de compétences";
 include "./vue/entete.html.php";
 include_once "./modele/mysql.php";
 
@@ -12,6 +12,10 @@ if(isset($_POST["eleve"])){
     $niveau = $_POST["acquisition"];
     global $db;
     $db->query("UPDATE acquisition SET niveau = $niveau WHERE idEleve=$idEleve AND idSST=$idSST");
+}
+
+if(isset($_POST["modifier"])){
+    $idEleve = $_POST["idU"];
 }
 
 include "./vue/tableau.php";

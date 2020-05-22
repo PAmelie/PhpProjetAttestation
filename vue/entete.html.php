@@ -94,47 +94,10 @@ require_once './modele/mysql.php';
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Modification tableau:</h6>
                     <a class="collapse-item" href="index.php?action=modifier">Mon tableau</a>
-                    <a class="collapse-item" href="utilities-border.html">Sous Dossier B</a>
-                    <a class="collapse-item" href="utilities-animation.html">Sous Dossier C</a>
-                    <a class="collapse-item" href="utilities-other.html">Sous Dossier D</a>
                 </div>
             </div>
         </li>
 
-        <!-- Nav Item - Devis Collapse Menu -->
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseDevis" aria-expanded="true" aria-controls="collapseDevis">
-                <i class="fas fa-fw fa-folder"></i>
-                <span>Devis</span>
-            </a>
-            <div id="collapseDevis" class="collapse" aria-labelledby="headingDevis" data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Premier Bloc:</h6>
-                    <a class="collapse-item" href="login.html">Premier Bloc Dossier A</a>
-                    <a class="collapse-item" href="register.html">Premier Bloc Dossier B</a>
-                    <a class="collapse-item" href="forgot-password.html">Premier Bloc Dossier C</a>
-                    <div class="collapse-divider"></div>
-                    <h6 class="collapse-header">Second Bloc:</h6>
-                    <a class="collapse-item" href="404.html">Second Bloc Dossier A</a>
-                    <a class="collapse-item" href="blank.html">Second Bloc Dossier B</a>
-                </div>
-            </div>
-        </li>
-
-        <!-- Nav Item - Commandes Collapse Menu -->
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCommandes" aria-expanded="true" aria-controls="collapseCommandes">
-                <i class="fas fa-fw fa-folder"></i>
-                <span>Commandes</span>
-            </a>
-            <div id="collapseCommandes" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Mon Dossier Commandes:</h6>
-                    <a class="collapse-item" href="buttons.html">Sous Dossier A</a>
-                    <a class="collapse-item" href="cards.html">Sous Dossier B</a>
-                </div>
-            </div>
-        </li>
         
         <?php
         }
@@ -174,7 +137,7 @@ require_once './modele/mysql.php';
                     <!-- Nav Item - User Information -->
                     <li class="nav-item dropdown no-arrow ">
                         <a class="nav-link dropdown-toggle" href="#" id="userDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="mr-2 d-none d-lg-inline text-gray-600">Entreprise</span>
+                            <span class="mr-2 d-none d-lg-inline text-gray-600">Agences</span>
                             <i class="d-flex fa fa-2x fa-building px-2"></i>
                         </a>
                         <!-- Dropdown - User Information -->
