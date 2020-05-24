@@ -13,9 +13,8 @@ require_once "./controleur/Eleves.php";
 <?php
 include_once "./modele/mysql.php";
 global $db;
-//$result = $db->query("SELECT nom, prenom FROM utilisateurs WHERE status=2");
-//$rowEleve = $result->fetch_assoc()
-$result = readAll("utilisateurs");
+$result = $db->query("SELECT * FROM utilisateurs WHERE statut=2");
+
 
 ?>
      
@@ -42,7 +41,7 @@ $result = readAll("utilisateurs");
             <td>
                  <form action="index.php?delete&action=modifier" method="post">
                     <div>
-                        <input type="hidden" name="modifier" value="<?php echo $row['idU']; ?>" />
+                        <input type="hidden" name="idEleve" value="<?php echo $row['idU']; ?>" />
                         <input type="submit" class="btn btn-info" value="Tableau" />
                         
                     </div>
