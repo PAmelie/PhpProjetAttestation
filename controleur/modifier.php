@@ -14,9 +14,18 @@ if(isset($_POST["eleve"])){
     $db->query("UPDATE acquisition SET niveau = $niveau WHERE idEleve=$idEleve AND idSST=$idSST");
 }
 
-if(isset($_POST["modifier"])){
-    $idEleve = $_POST["idU"];
+
+//récupération de l'idée utilisateur de l'éléve
+if($_SESSION["statut"]==2){
+    $idEleve = $_SESSION['idU'];
 }
+else{
+    if(isset($_POST["idEleve"])){
+        $idEleve1 = $_POST["idEleve"];
+    }
+}
+
+
 
 include "./vue/tableau.php";
 
