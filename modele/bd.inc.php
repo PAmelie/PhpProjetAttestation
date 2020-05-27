@@ -4,10 +4,15 @@ class Connexion {
     
 
 static function getInstance() {
+    /*$login = "promo20";
+    $mdp = "user@sio20";
+    $bd = "promo20_franck";
+    $serveur = "localhost";*/
+    
     $login = "root";
     $mdp = "";
     $bd = "competence";
-    $serveur = "127.0.0.1";
+    $serveur = "localhost";
     
 
     try {

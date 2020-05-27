@@ -2,7 +2,13 @@
 
 //mysql.php = connection a la BD et creation des fonctions pour le CRUD
 
-//connection a la BD
+//connection a la BD serveur
+/*$servername = 'localhost';
+$username = 'promo20';
+$password = 'user@sio20';
+$dbname = 'promo20_franck';*/
+
+//connection a la BD perso
 $servername = 'localhost';
 $username = 'root';
 $password = '';
