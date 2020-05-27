@@ -13,6 +13,7 @@
     <!-- Custom styles -->
 <!--    <link href="vue/css/sb-admin-2.min.css" rel="stylesheet">-->
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>   
 
@@ -36,8 +37,8 @@
                                 <input class="form-control" type="text" name="mail" placeholder="Email de connexion" autocomplete="off" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$" required/><br />
                             </div>
                             <div class="form-group">
-                                <label for="password" class="text-info">Password:</label><br>
-                                <input type="text" name="mdp" placeholder="Mot de passe" id="password" class="form-control">
+                                <label for="password" class="text-info">Mot de passe:</label><br>
+                                <input type="password" name="mdp" placeholder="Mot de passe" id="password" class="form-control">
                             </div>
                             <div class="form-group">                                
                                 <input type="submit" class="btn btn-info btn-md" value="Valider">
