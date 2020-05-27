@@ -21,7 +21,7 @@ if($_SESSION["statut"]==2){
 }
 else{
     if(isset($_POST["idEleve"])){
-        $idEleve1 = $_POST["idEleve"];
+        $idEleve = $_POST["idEleve"];
     }
 }
 
