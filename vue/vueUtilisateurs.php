@@ -42,12 +42,12 @@ $result = readAll("utilisateurs");
             <td>
                 <!-- Bouton "edit" pour récupérer les données de la ligne et les envoyer dans le formulaire  -->
                <a href="index.php?edit=<?php echo $row['idU']; ?>&action=evaluer"
-                  class="btn btn-info">Edit</a>
+                  class="btn btn-info" style="width:100px">Edit</a>
                 <!-- Bouton "delete" pour supprimer les données de la ligne -->
                 <form action="index.php?delete&action=evaluer" method="post">
                     <div>
                         <input type="hidden" name="delete" value="<?php echo $row['idU']; ?>" />
-                        <input type="submit" class="btn btn-danger" value="Supprimer" />
+                        <input type="submit" class="btn btn-danger" style="width:100px" value="Supprimer" />
                     </div>
                 </form>
             </td>

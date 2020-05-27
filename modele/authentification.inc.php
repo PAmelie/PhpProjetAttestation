@@ -6,6 +6,7 @@ require_once 'mysql.php';
 
 function login($mail, $mdp){
     
+    $rep = true;
     $util = getUtilisateurByMail($mail);
     $mdpBD = $util['mdp'];
     $grainDeSel = $util['graindesel'];
@@ -31,12 +32,11 @@ function login($mail, $mdp){
         $_SESSION['nom'] = $util['nom'];
         $_SESSION['prenom'] = $util['prenom'];
         $_SESSION['mdp'] = $mdp;
-        return true;
     }
     else{
-        return false;
+        $rep=false;        
     }
-       
+    return $rep;
 }
 
 

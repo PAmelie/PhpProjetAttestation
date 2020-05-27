@@ -34,12 +34,12 @@ $result = readAll("agences");
             <td>
                <!-- Bouton "edit" pour récupérer les données de la ligne et les envoyer dans le formulaire  -->
                <a href="index.php?edit=<?php echo $row['idA']; ?>&action=Agences"
-                  class="btn btn-info">Edit</a>
+                  class="btn btn-info" style="width:100px">Edit</a>
                 <!-- Bouton "delete" pour supprimer les données de la ligne --> 
                 <form action="index.php?delete&action=Agences" method="post">
                     <div>
                         <input type="hidden" name="delete" value="<?php echo $row['idA']; ?>" />
-                        <input type="submit" class="btn btn-danger" value="Supprimer" />
+                        <input type="submit" class="btn btn-danger" style="width:100px" value="Supprimer" />
                         
                     </div>
                     

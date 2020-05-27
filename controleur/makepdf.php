@@ -8,12 +8,12 @@ $result=readAll ("themes");
 
 
 //récupération de l'idée utilisateur de l'éléve
-if($_SESSION["statut"]==2){
-    $idEleve = $_SESSION['idU'];
-}
-else{
-    $idEleve = $_SESSION["idEleve"];
-}
+//if($_SESSION["statut"]==2){
+//    $idEleve = $_SESSION['idU'];
+//}
+//else{
+//    $idEleve = $_SESSION["idEleve"];
+//}
 
 //fonction pour insére  les sousousthèmes qui n'existent pas encore dans la table acquisition pour l'idEleve
 function initAcqEleve($idEleve){

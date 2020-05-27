@@ -29,12 +29,12 @@ $result = readAll("formations");
                 
                 <!-- Bouton "edit" pour récupérer les données de la ligne et les envoyer dans le formulaire  -->
                 <a href="index.php?edit=<?php echo $row['idF']; ?>&action=Formation"
-                  class="btn btn-info">Edit</a> 
+                  class="btn btn-info" style="width:100px">Edit</a> 
                 <!-- Bouton "delete" pour supprimer les données de la ligne -->
                 <form action="index.php?delete&action=Formation" method="post">
                     <div>
                         <input type="hidden" name="delete" value="<?php echo $row['idF']; ?>" />
-                        <input type="submit" class="btn btn-danger" value="Supprimer" />
+                        <input type="submit" class="btn btn-danger" style="width:100px" value="Supprimer" />
                         
                     </div>
                     

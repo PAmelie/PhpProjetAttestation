@@ -19,8 +19,6 @@
 
 </head>
 
-
-
 <!------ Include the above in your HEAD tag ---------->
 
 <body>
@@ -51,26 +49,5 @@
         </div>
     </div>
 </body>
-
-<!--<body id="page-top">
- Page Heading 
-    
-
-    Content Row 
-    <div class="row px-4">
-        <form action="./?action=connexion" method="POST">
-
-            <input type="text" name="mail" placeholder="Email de connexion" autocomplete="off" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$" required/><br />
-            <input type="password" name="mdp" placeholder="Mot de passe"  autocomplete="off" required/><br />
-            <input type="submit" />
-        </form>
-        <br/>    
-    </div>
-    <a class="px-2" href="./?action=motdepasse"> Mot de passe oublié</a>
-
-             /.container-fluid 
-
-         End of Main Content 
-</body>-->
 
 

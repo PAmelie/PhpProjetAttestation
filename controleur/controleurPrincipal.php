@@ -4,6 +4,7 @@ function controleurPrincipal($action) {
     $lesActions = array();
     $lesActions["defaut"] = "accueil.php";
     $lesActions["connexion"] = "connexion.php";
+    $lesActions["connexionErreur"] = "accueil.php";
     $lesActions["motdepasse"] = "motDePasseOubli.php";
     $lesActions["evaluer"] = "evaluer.php";
     $lesActions["modifier"] = "modifier.php";

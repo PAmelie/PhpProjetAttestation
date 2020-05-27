@@ -34,13 +34,8 @@ require_once './modele/mysql.php';
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
         <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="Homepage.html">
-
-                <img class="sidebar-brand-icon d-none d-sm-none d-md-block" src="vue/img/6273.png" style="width: 100%;">
-
-            <div class="sidebar-brand-text mx-3 d-block d-sm-none">GRETA</sup></div>
-
-        </a>
+            <img class="sidebar-brand-icon d-flex align-items-center justify-content-center d-none d-sm-none d-md-block" src="vue/img/6273.png" style="width: 100%;">
+            <div class="sidebar-brand-text d-flex align-items-center justify-content-center mx-3 d-block d-sm-none">GRETA</sup></div>
 
         <!-- Divider -->
         <hr class="sidebar-divider my-0">
@@ -165,6 +160,29 @@ require_once './modele/mysql.php';
 
             </nav>
             <!-- End of Topbar -->
+            
+            <!-- Logout Modal-->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Vous nous quittez déjà?</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">Sélectionnez "Déconnexion" ci-dessous si vous souhaitez quitter votre session actuelle.</div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Annuler</button>
+                <form action="./?action=defaut" method="POST" >
+                      <div>                                
+                           <input type="submit" class="btn btn-info btn-md" value="Déconnexion">
+                      </div>                            
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
             <!-- Begin Page Content -->
             <div class="container-fluid">

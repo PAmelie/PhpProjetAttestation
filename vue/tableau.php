@@ -40,7 +40,7 @@ function echoOption($idSST, $value, $texte){
 }
 
 ?>     
-<form action="index.php?delete&action=makepdf" method="post"> 
+ 
     <section class="container-fluid tableau">
        
         <div class="container_fluid">
@@ -103,7 +103,7 @@ function echoOption($idSST, $value, $texte){
             </table>
         </div>
         
-        <button type="submit" class="btn btn-success btn-lg btn-block">Créer un PDF</button>
+       
 
     </section>
 </form>   

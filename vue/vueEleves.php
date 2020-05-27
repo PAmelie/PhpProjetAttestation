@@ -42,7 +42,7 @@ $result = $db->query("SELECT * FROM utilisateurs WHERE statut=2");
                  <form action="index.php?delete&action=modifier" method="post">
                     <div>
                         <input type="hidden" name="idEleve" value="<?php echo $row['idU']; ?>" />
-                        <input type="submit" class="btn btn-info" value="Tableau" />
+                        <input type="submit" class="btn btn-info"  value="Tableau" />
                         
                     </div>
                     

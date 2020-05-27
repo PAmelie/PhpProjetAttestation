@@ -1,12 +1,9 @@
 <?php
-
-
  
 if ( $_SERVER["SCRIPT_FILENAME"] == __FILE__ ){
     $racine=".";
 }
 include_once "$racine/modele/authentification.inc.php";
-
 
 
 // recuperation des donnees GET, POST, et SESSION
@@ -20,6 +17,7 @@ else
     $mdp="";
 }
 
+
 // traitement si necessaire des donnees recuperees
 login($mail,$mdp);
 
@@ -32,6 +30,12 @@ else{ // l'utilisateur n'est pas connecté, on affiche le formulaire de connexio
     // appel du script de vue 
 
     $titre = "connexion";
-    include "$racine/vue/entete.html.php";
-    include "$racine/vue/pied.html.php";
+    if (login($mail,$mdp)){
+        
+        include "$racine/vue/entete.html.php";
+        include "$racine/vue/pied.html.php";
+    }
+    else {
+        include "$racine/vue/vueConnexion.php";
+}
 }
