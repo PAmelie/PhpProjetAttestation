@@ -1,7 +1,5 @@
 <?php
 
-//TODO 
-
 $titre = "Tableau de compétences";
 include "./vue/entete.html.php";
 include_once "./modele/mysql.php";

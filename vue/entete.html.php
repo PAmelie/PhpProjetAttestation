@@ -65,7 +65,10 @@ require_once './modele/mysql.php';
                     <a class="collapse-item" href="index.php?action=Utilisateurs">Utilisateur</a>
                     <a class="collapse-item" href="index.php?action=Agences">Agence</a>
                     <a class="collapse-item" href="index.php?action=Formation">Formation</a>
+                    <?php if($_SESSION['statut']==1){
+                    ?>
                     <a class="collapse-item" href="index.php?action=Eleves">Eleves</a>
+                    <?php } ?>
             </div>
         </li>
         <?php

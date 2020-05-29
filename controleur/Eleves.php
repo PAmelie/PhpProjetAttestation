@@ -4,17 +4,12 @@ $titre = "Gestion des élèves";
 include "./vue/entete.html.php";
 include_once './modele/mysql.php';
 
-if (isset($_POST[''])){
-    
-    $ville = $_POST['ville'];
-    $mail = $_POST['mail'];
-       
-    $data = array(
-        "ville" => $ville,
-        "mail" => $mail,
-    );
-            
-    insert("Agences", $data);   
+
+if (isset($_POST['lecture'])){
+    $lecture = $_POST['lecture'];
+    $idEleve = $_POST['eleve'];
+    global $db;
+    $db->query("UPDATE lecture SET lecture = $lecture WHERE idEleve=$idEleve");
 }
 
 include "./vue/vueEleves.php";
